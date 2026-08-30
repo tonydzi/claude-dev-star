@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use claude-dev-star in research or software, please cite it as below."
+title: "claude-dev-star"
+type: software
+authors:
+  - family-names: Dziatkovskii
+    given-names: Anton
+    orcid: "https://orcid.org/0000-0001-7408-3054"
+    affiliation: "Palo Alto AI Research Lab"
+repository-code: "https://github.com/tonydzi/claude-dev-star"
+url: "https://github.com/tonydzi/claude-dev-star"
+license: MIT
+abstract: >-
+  A single-file, dependency-free strategy radar for Claude Code sessions. Existing
+  dashboards report how many tokens a session burned; this one reports where the effort
+  went and whether it moved the operator forward. It reads local Claude Code transcripts,
+  classifies each session into a direction using deterministic keyword rules over the
+  session title and first user message, and renders a star chart in which each spike is
+  one direction and spike length is that direction's share of output tokens. Directions
+  are declared by the operator and carry a forward flag, so the tool reports whether the
+  sessions agree with the stated goals rather than deciding what progress is; a forward
+  direction below a ten percent share is flagged as starving. Output tokens are deduped
+  by message id, because Claude Code repeats the usage block on every record of a message
+  and naive summing overcounts. No LLM call is made and nothing leaves the machine, which
+  makes the classification free, reproducible and auditable by reading a dictionary. Two
+  artifacts are written: an HTML chart for the human and a JSON aggregate intended to be
+  read back by agents before they propose new work.
+keywords:
+  - claude-code
+  - session-analytics
+  - effort-allocation
+  - transcript-analysis
+  - developer-tools
+  - local-first
